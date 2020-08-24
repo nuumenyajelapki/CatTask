@@ -1,13 +1,236 @@
+@font-face{
+  font-family: Exo;
+  src: ('./fonts/Exo2.0-Thin.otf')
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-image: url(./img/bg.png);
+  background-origin: border-box;
+  /* background-repeat: no-repeat; */
+  font-family: Exo;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.wrapper{
+  margin: 0 auto;
+  max-width: 1090px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.section-txt{
+  margin-top: 36px;
+}
+
+.card { transition: all .2s ease-in-out;  margin: 0 auto; width: 316px;}
+
+.card:hover { transform: scale(1.005); }
+
+.section-cards{
+  margin-top: 21px;
+  display: flex;
+}
+
+@media (max-width: 960px){
+  .section-cards{
+    width: 308px;
+    margin: 0 auto;
+    margin-top: 21px;
+    display: block;
+  }
+  .card{
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+}
+
+.card-bot {
+  position: relative;
+  background-color: #1698D9;
+  width: 316px;
+  height: 505px;
+  border-radius: 12px;
+  -webkit-clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+}
+
+.activeCard{
+  position: relative;
+  background-color: #D91667;
+  width: 316px;
+  height: 505px;
+  border-radius: 12px;
+  -webkit-clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+}
+
+.disabledCard{
+  position: relative;
+  background-color: #b3b3b3;
+  width: 316px;
+  height: 505px;
+  border-radius: 12px;
+  -webkit-clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+}
+
+.card-top {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 308px;
+  height: 497px;
+  border-radius: 12px;
+  background-color: #f2f2f2;
+  background-image: url(./img/cat.png);
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  -webkit-clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+}
+
+.disabledCardTop {
+  opacity: 0.5;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 308px;
+  height: 497px;
+  border-radius: 12px;
+  background-color: #f2f2f2;
+  background-image: url(./img/cat.png);
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  -webkit-clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+}
+
+.card__txt{
+  padding-top: 21px;
+  padding-left: 51px;
+}
+
+.card__txt-1{
+  font-family: Trebuchet MS;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #666666;
+  padding-top: 5px;
+  text-align: left;
+}
+
+.card__txt-2{
+  font-family: Trebuchet MS;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  color: #000000;
+  text-align: left;
+}
+
+.card__txt-3{
+  font-family: Trebuchet MS;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  text-align: left;
+}
+
+.card__txt-4{
+  font-family: Trebuchet MS;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #666666;
+  padding-top: 15px;
+  text-align: left;
+}
+
+.card__weight-circle{
+  background-color: #1698D9;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  bottom: 16px;
+  right: 16px;
+}
+
+.activeCircle{
+  background-color: #D91667;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  bottom: 16px;
+  right: 16px;
+}
+
+.disabledCircle{
+  background-color: #b3b3b3;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  bottom: 16px;
+  right: 16px;
+}
+
+.card__weight-txt1{
+  padding-top: 24px;
+  font-family: Trebuchet MS;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.card__weight-txt2{
+  padding-top: 5px;
+  font-family: Trebuchet MS;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.card__dopTxt-txt{
+  padding-top: 14px;
+  width: 316px;
+  font-family: Trebuchet MS;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.card__dopTxt-link{
+  padding-left: 1px;
+  font-family: Trebuchet MS;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  text-decoration: none;
+  border-bottom: 1px dashed #22A7E9;
+
+  text-align: center;
+
+  color: #22A7E9;
 }
